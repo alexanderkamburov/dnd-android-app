@@ -1,11 +1,13 @@
 package com.example.countdowntimer;
 
 public class CountdownTimer {
+
     public static void main(String[] args) throws InterruptedException {
-        DisplayToConsole timerDisplay = new DisplayToConsole();
+        Display displayingTimer = new Display();
 
         Counter counter = new Counter();
-        counter.main(3, timerDisplay);
+        counter.count(5, displayingTimer);
     }
+
 }
 

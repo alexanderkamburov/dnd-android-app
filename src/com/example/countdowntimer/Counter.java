@@ -1,10 +1,13 @@
 package com.example.countdowntimer;
 
 public class Counter {
-    public void main(int userTimeSeconds, DisplayToConsole display) throws InterruptedException {
+
+ public void count(int c , Display displays)  throws InterruptedException {
+
         int SixtyIn = 60;
 
-        for (int time = userTimeSeconds; time >= 0; time--) {
+        for (int time = c; time >= 0; time--) {
+
             int timeM = 0;
 
             if (time >= SixtyIn) {
@@ -13,13 +16,27 @@ public class Counter {
 
             int timeS = (time - timeM * SixtyIn);
 
-            display.doDisplayTime(timeM, timeS);
+            displays.display(timeM,timeS);
 
             if (time == 0) {
-                display.doDisplayTimerEnd();
+
+                displays.displayEnd();
+
             }
 
             Thread.sleep(1000);
+
         }
+
     }
+
 }
+
+
+
+
+
+
+
+
+
